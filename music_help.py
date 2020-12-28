@@ -1,9 +1,12 @@
+#DATES
 
 notes = ["C", "C#", "D", "D#", "E", "F", 
          "F#", "G", "G#", "A", "A#", "B"]
 
 intervals = ["Unisono", "2m", "2M", "3m", "3M", "4j", 
 			 "5dim", "5j", "6m", "6M", "7m", "7M", "8j"]
+
+# INTERVALS FUNCTIONS
 
 def intervals_calculator (base, interval, sense):
 	index = search_note(base)
@@ -53,3 +56,32 @@ def tell_interval (base, dest, sense):
 
 	return intervals[interv]
 
+# ----------
+
+#CHORDS FUNCTIONS
+
+def tell_3chord (root, third, fift):
+	newroot = check_enharmony (root)
+	newthird = check_enharmony (third)
+	newfift = check_enharmony (fift)
+
+	dist1 = distance (newroot, newthird)
+	dist2 = distance (newthird, newfift)
+
+	if (dist1 == 4 and dist2 == 3):
+		chord = root
+
+	elif (dist1 == 3 and dist2 == 4):
+		chord = root+'m'
+
+	elif (dist1 == 3 and dist2 == 3):
+		chord = root + ' Dim'
+
+	elif (dist1 == 4 and dist2 == 4):
+		chord = root + ' Aum'
+
+	else :
+		print ("Something are wrong!")
+		return "0"
+
+	return chord
