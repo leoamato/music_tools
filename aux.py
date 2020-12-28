@@ -1,6 +1,5 @@
 #AUXILIAR FUNCTIONS
 
-
 # ENHARMONY
 
 def have_bemol (note):
