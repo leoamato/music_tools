@@ -48,10 +48,13 @@ def distance (note1, note2):
 	value1 = search_note(note1)
 	value2 = search_note(note2)
 
-	return (value2 - value1)
+	if (value1 < value2):
+		return (value2 - value1)
 
+	elif (value1 > value2):
+		return (value1 - value2)
 
-
-
-
+	else:
+		print ("Something are wrong!")
+		return 0
 

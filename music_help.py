@@ -85,3 +85,100 @@ def tell_3chord (root, third, fift):
 		return "0"
 
 	return chord
+
+def build_3chord (chord, chord_type):
+
+	if (chord_type == "M"):
+		root = chord
+		third = intervals_calculator (chord, "3M", "asc")
+		fift = intervals_calculator (chord, "5j", "asc")
+		final_chord = [root, third, fift]
+
+	elif (chord_type == "m"):
+		root = chord
+		third = intervals_calculator (chord, "3m", "asc")
+		fift = intervals_calculator (chord, "5j", "asc")
+		final_chord = [root, third, fift]
+
+	elif (chord_type == "dim"):
+		root = chord
+		third = intervals_calculator (chord, "3m", "asc")
+		fift = intervals_calculator (chord, "5dim", "asc")
+		final_chord = [root, third, fift]
+
+	elif (chord_type == "aum"):
+		root = chord
+		third = intervals_calculator (chord, "3M", "asc")
+		fift = intervals_calculator (chord, "6m", "asc")
+		final_chord = [root, third, fift]
+
+	else:
+		print ("Something are wrong!")
+		return 0
+
+	return final_chord
+
+def tell_4chord (root, third, fift, seven):
+	newroot = check_enharmony (root)
+	newthird = check_enharmony (third)
+	newfift = check_enharmony (fift)
+	newseven = check_enharmony (seven)
+	chord = root
+
+	thriad = tell_3chord(newroot, newthird, newfift)
+	seven_distance = distance (newroot, newseven)
+
+	if (thriad == (root) and seven_distance == 1 or seven_distance == 11):
+		chord = root + 'Maj7'
+
+	elif (thriad == (root) and seven_distance == 2 or seven_distance == 10):
+		chord = root + '7'
+
+	elif (thriad == (root + 'm') and seven_distance == 2 or seven_distance == 10):
+		chord = root + 'm7'
+
+	elif (thriad == (root + 'dim') and seven_distance == 2 or seven_distance == 10):
+		chord = root + 'm7b5'
+
+	else:
+		print ("Something are wrong!")
+		return 0
+
+	return chord
+
+def build_4chord (chord, chord_type):
+
+	if (chord_type == "Maj7"):
+		root = chord
+		third = intervals_calculator (chord, "3M", "asc")
+		fift = intervals_calculator (chord, "5j", "asc")
+		seven = intervals_calculator (chord, "7M", "asc")
+		final_chord = [root, third, fift, seven]
+
+	elif (chord_type == "7"):
+		root = chord
+		third = intervals_calculator (chord, "3M", "asc")
+		fift = intervals_calculator (chord, "5j", "asc")
+		seven = intervals_calculator (chord, "7m", "asc")
+		final_chord = [root, third, fift, seven]
+
+	elif (chord_type == "m7"):
+		root = chord
+		third = intervals_calculator (chord, "3m", "asc")
+		fift = intervals_calculator (chord, "5j", "asc")
+		seven = intervals_calculator (chord, "7m", "asc")
+		final_chord = [root, third, fift, seven]
+
+	elif (chord_type == "m7b5"):
+		root = chord
+		third = intervals_calculator (chord, "3m", "asc")
+		fift = intervals_calculator (chord, "5dim", "asc")
+		seven = intervals_calculator (chord, "7m", "asc")
+		final_chord = [root, third, fift, seven]
+
+	else:
+		print ("Something are wrong!")
+		return 0
+
+	print ("Sorry for enharmony erros :P ")
+	return final_chord
