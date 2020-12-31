@@ -1,3 +1,12 @@
+# Import aux funtions
+
+from aux import have_bemol
+from aux import enharmony
+from aux import check_enharmony
+from aux import search_interval
+from aux import search_note
+from aux import distance
+
 #DATES
 
 notes = ["C", "C#", "D", "D#", "E", "F", 
@@ -180,5 +189,4 @@ def build_4chord (chord, chord_type):
 		print ("Something are wrong!")
 		return 0
 
-	print ("Sorry for enharmony erros :P ")
 	return final_chord
