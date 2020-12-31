@@ -81,7 +81,7 @@ while (loop == 1):
 	else:
 		print ("Something are wrong, please enter a correct number")
 
-	print ("Sorry for enharmony errors :P ")
+	print ("Sorry for enharmony errors :P \n")
 
 	print ("do you want to do another task?\n")
 	print ("1_ Yes")

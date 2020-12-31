@@ -74,19 +74,19 @@ def tell_3chord (root, third, fift):
 	newthird = check_enharmony (third)
 	newfift = check_enharmony (fift)
 
-	dist1 = distance (newroot, newthird)
-	dist2 = distance (newthird, newfift)
+	dist1 = tell_interval(newroot, newthird, "asc")
+	dist2 = tell_interval(newthird, newfift, "asc")
 
-	if (dist1 == 4 and dist2 == 3):
+	if (dist1 == "3M" and dist2 == "3m"):
 		chord = root
 
-	elif (dist1 == 3 and dist2 == 4):
+	elif (dist1 == "3m" and dist2 == "3M"):
 		chord = root+'m'
 
-	elif (dist1 == 3 and dist2 == 3):
+	elif (dist1 == "3m" and dist2 == "3m"):
 		chord = root + ' Dim'
 
-	elif (dist1 == 4 and dist2 == 4):
+	elif (dist1 == "3M" and dist2 == "3M"):
 		chord = root + ' Aum'
 
 	else :
@@ -135,19 +135,20 @@ def tell_4chord (root, third, fift, seven):
 	chord = root
 
 	thriad = tell_3chord(newroot, newthird, newfift)
-	seven_distance = distance (newroot, newseven)
+	seven_distance = tell_interval(newroot, newseven, "asc")
+	print thriad, seven_distance
 
-	if (thriad == (root) and seven_distance == 1 or seven_distance == 11):
+	if (thriad == (root) and seven_distance == "7M"):
 		chord = root + 'Maj7'
 
-	elif (thriad == (root) and seven_distance == 2 or seven_distance == 10):
+	elif (thriad == (root) and seven_distance == "7m"):
 		chord = root + '7'
 
-	elif (thriad == (root + 'm') and seven_distance == 2 or seven_distance == 10):
+	elif (thriad == (root + ' m') and seven_distance == "7m"):
 		chord = root + 'm7'
 
-	elif (thriad == (root + 'dim') and seven_distance == 2 or seven_distance == 10):
-		chord = root + 'm7b5'
+	elif (thriad == (root + ' dim') and seven_distance == "7m"):
+		chord = root + ' m7b5'
 
 	else:
 		print ("Something are wrong!")
