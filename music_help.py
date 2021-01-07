@@ -136,22 +136,21 @@ def tell_4chord (root, third, fift, seven):
 
 	thriad = tell_3chord(newroot, newthird, newfift)
 	seven_distance = tell_interval(newroot, newseven, "asc")
-	print thriad, seven_distance
-
+	
 	if (thriad == (root) and seven_distance == "7M"):
 		chord = root + 'Maj7'
 
 	elif (thriad == (root) and seven_distance == "7m"):
 		chord = root + '7'
 
-	elif (thriad == (root + ' m') and seven_distance == "7m"):
+	elif (thriad == (root + 'm') and seven_distance == "7m"):
 		chord = root + 'm7'
 
-	elif (thriad == (root + ' dim') and seven_distance == "7m"):
+	elif (thriad == (root + ' Dim') and seven_distance == "7m"):
 		chord = root + ' m7b5'
 
 	else:
-		print ("Something are wrong!")
+		print ("Error parsing chord!")
 		return 0
 
 	return chord

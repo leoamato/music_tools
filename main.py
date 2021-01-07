@@ -62,7 +62,7 @@ while (loop == 1):
 
 	elif (selection == 5): #Tell quad chord
 
-		chord = str(raw_input ("Please insert a chord \n"))
+		chord = str(raw_input ("Please insert a chord (Ej: C, D, E...) \n"))
 		chordtype = str(raw_input ("Please insert a chord type (Maj7, 7, m7, m7b5)\n"))
 
 		result = build_4chord(chord, chordtype)

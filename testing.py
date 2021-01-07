@@ -117,3 +117,93 @@ for i in range (0,12):
 print ("hits", hit)
 print ("misses", miss)
 
+print "------"
+# ----------------------------------------------------------------------------------------------
+# Test quad chords
+
+hit = 0
+miss = 0
+
+print "Testing Maj7 chords"
+for i in range (0,12):
+	third = intervals_calculator (notes[i], "3M", "asc")
+	fift = intervals_calculator (notes[i], "5j", "asc")
+	seven = intervals_calculator (notes[i], "7M", "asc")
+
+	test1 = tell_4chord(notes[i], third, fift, seven)
+	test2 = build_4chord (notes[i], "Maj7")
+
+	if (test2[0] == notes[i] and test2[1] == third and test2[2] == fift and test2[3] == seven):
+		hit += 1
+	else :
+		miss += 1
+
+print ("hits", hit)
+print ("misses", miss)
+
+# ----------
+
+hit = 0
+miss = 0
+
+print "Testing m7 chords"
+for i in range (0,12):
+	third = intervals_calculator (notes[i], "3m", "asc")
+	fift = intervals_calculator (notes[i], "5j", "asc")
+	seven = intervals_calculator (notes[i], "7m", "asc")
+
+	test1 = tell_4chord(notes[i], third, fift, seven)
+	test2 = build_4chord (notes[i], "m7")
+
+	if (test2[0] == notes[i] and test2[1] == third and test2[2] == fift and test2[3] == seven):
+		hit += 1
+	else :
+		miss += 1
+
+print ("hits", hit)
+print ("misses", miss)
+
+# ----------
+
+hit = 0
+miss = 0
+
+print "Testing 7 chords"
+for i in range (0,12):
+	third = intervals_calculator (notes[i], "3M", "asc")
+	fift = intervals_calculator (notes[i], "5j", "asc")
+	seven = intervals_calculator (notes[i], "7m", "asc")
+
+	test1 = tell_4chord(notes[i], third, fift, seven)
+	test2 = build_4chord (notes[i], "7")
+
+	if (test2[0] == notes[i] and test2[1] == third and test2[2] == fift and test2[3] == seven):
+		hit += 1
+	else :
+		miss += 1
+
+print ("hits", hit)
+print ("misses", miss)
+
+# ----------
+
+hit = 0
+miss = 0
+
+print "Testing m7b5 chords"
+for i in range (0,12):
+	third = intervals_calculator (notes[i], "3m", "asc")
+	fift = intervals_calculator (notes[i], "5dim", "asc")
+	seven = intervals_calculator (notes[i], "7m", "asc")
+
+	test1 = tell_4chord(notes[i], third, fift, seven)
+	test2 = build_4chord (notes[i], "m7b5")
+
+	if (test2[0] == notes[i] and test2[1] == third and test2[2] == fift and test2[3] == seven):
+		hit += 1
+	else :
+		miss += 1
+
+print ("hits", hit)
+print ("misses", miss)
+
