@@ -21,3 +21,9 @@ This is a python program that will help to musicians in some daily tasks.
 
 * Create the given four note chord 
 > def build_4chord (chord, chord_type):
+
+* Translate a song
+> Implement!
+
+* Create a scale (major, minor and modals)
+> Implement!
