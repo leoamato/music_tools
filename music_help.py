@@ -15,9 +15,6 @@ notes = ["C", "C#", "D", "D#", "E", "F",
 intervals = ["Unisono", "2m", "2M", "3m", "3M", "4j", 
 			 "5dim", "5j", "6m", "6M", "7m", "7M", "8j"]
 
-
-
-
 # INTERVALS FUNCTIONS
 
 def intervals_calculator (base, interval, sense):
@@ -200,16 +197,4 @@ def create_scale (note, scale_type):
 
 
 
-C D E F G A B C
-D E F G A B C D
-E F G A B C D E
-
-F G A B C D E F
-G A B C D E F G
-A B C D E F G A
-B C D E F G A B
-
-	[2, 2, 1, 2, 2, 2, 1] # Jonico
-	[2, 1, 2, 2, 2, 1, 2] # Dorico
-	[1, 2, 2, 2, 1, 2, 2] # Frigio
 """
